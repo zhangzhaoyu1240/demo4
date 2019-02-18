@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/js/jquery-1.12.4.js"></script>
+</head>
+<body>
+<script th:if="!${session.user}">
+    location.href="http://localhost:8080/logindo"
+</script>
+<form method="post"  th:action="@{http://localhost:8080/addStu}">
+    <input type="text" name="name"   value="">
+    <input type="text" name="price"  value="">
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

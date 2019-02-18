@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bdqn.dao.StudentMapper">
+    <select id="getList" resultType="Student">
+        SELECT * FROM student
+    </select>
+    <delete id="delId">
+        DELETE FROM student WHERE id=#{id}
+    </delete>
+    <insert id="addStu">
+        INSERT INTO student VALUES(NULL,#{stu.name},#{stu.price})
+    </insert>
+    <update id="updStu" >
+        UPDATE student SET NAME=#{stu.name} ,price=#{stu.price} WHERE id=#{id}
+    </update>
+    <select id="getOne" resultType="Student">
+        SELECT * FROM student where id=#{id}
+    </select>
+</mapper>
